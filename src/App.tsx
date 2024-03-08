@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import data from './CollegeBasketballTeams.json';
 
+// set the variable for the interface
 interface TeamProps {
   tid: number;
   cid: number;
@@ -17,8 +18,10 @@ interface TeamProps {
   longitude: number;
 }
 
+// pull in the data
 const BasketballTeams = data;
 
+// create the heading that introduces the user to the page
 function Welcome() {
   return (
     <div>
@@ -28,7 +31,7 @@ function Welcome() {
     </div>
   );
 }
-
+// pull in the data for each basketball team
 class Team extends React.Component<TeamProps> {
   render() {
     const oneTeam = this.props;
@@ -45,7 +48,7 @@ class Team extends React.Component<TeamProps> {
     );
   }
 }
-
+// display the pulled in data
 function TeamList() {
   return (
     <div>
@@ -56,6 +59,7 @@ function TeamList() {
   );
 }
 
+// create the page from the two functions above
 function App() {
   return (
     <div className="App">
